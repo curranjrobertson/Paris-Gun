@@ -7,11 +7,13 @@ th = 55; % Launch Angle
 cd = 0.001; % drag coefficient
 
 % Variables
-t = 0.1:0.1:182
+t = 0.1:0.1:182;
 
 % Equation 4 x(t)
 x = (vo.*cos(th)./cd).*(1-exp(-cd.*t));
 
 plot(t, x);
 hold on
-title
+title('X-Position of Projectile as a Function of Time')
+xlabel('time (s)')
+ylabel('X position (m)')

@@ -1,5 +1,6 @@
 % This script plots the x-position of the projectile as a function of t
 % with linear air drag.
+
 clear all; clc; close all
 
 % Constants

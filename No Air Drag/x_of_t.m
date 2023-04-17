@@ -2,12 +2,16 @@
 clear all; clc; close all
 
 % Constants
-vo = 1640; % initial velocity
-th = 55; % Launch Angle
-cd = 0.001; % drag coefficient
+vo = 1640; % initial velocity in m/s
+th = 55; % Launch Angle in degrees
+cd = 0.0027; % drag coefficient in 1/s
 
 % Variables
-t = 0.1:0.1:182;
+step = 0.1; % step size
+t = 0.1:step:182; % time vector in seconds
+
+% Unit Conversions
+th = deg2rad(th);
 
 % Equation 4 x(t)
 x = (vo.*cos(th)./cd).*(1-exp(-cd.*t));

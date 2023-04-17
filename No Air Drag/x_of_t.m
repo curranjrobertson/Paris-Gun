@@ -17,6 +17,7 @@ th = deg2rad(th);
 % Equation 4 x(t)
 x = (vo.*cos(th)./cd).*(1-exp(-cd.*t));
 
+% Plot
 plot(t, x);
 hold on
 title('X-Position of Projectile as a Function of Time')

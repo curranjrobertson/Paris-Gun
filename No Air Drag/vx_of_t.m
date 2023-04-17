@@ -16,6 +16,7 @@ th = deg2rad(th);
 
 % Equation
 
+% Plot
 plot(t, x);
 hold on
 title('')

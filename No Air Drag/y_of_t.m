@@ -20,6 +20,6 @@ y = -(g/cd).*t + (cd*vo*sin(th) + g).*(1 - exp(-cd.*t))./cd^2;
 
 plot(t, y);
 hold on
-title('')
-xlabel('time (s)')
-ylabel('')
+title('Y-Position of Projectile as a Function of Time')
+xlabel('Time (s)')
+ylabel('Y-Position')

@@ -1,5 +1,5 @@
 % This script plots the x-position of the projectile as a function of t
-% with no air drag.
+% with linear air drag.
 clear all; clc; close all
 
 % Constants
@@ -20,6 +20,6 @@ x = (vo.*cos(th)./cd).*(1-exp(-cd.*t));
 % Plot
 plot(t, x);
 hold on
-title('X-Position of Projectile as a Function of Time')
+title('X-Position of Projectile as a Function of Time With Linear Air Drag')
 xlabel('time (s)')
 ylabel('X position (m)')

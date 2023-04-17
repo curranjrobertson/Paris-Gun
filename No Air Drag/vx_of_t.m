@@ -1,5 +1,5 @@
 % This script plots the velocity in the x-direction of the projectile as a function of t
-% with no air drag.
+% with linear air drag.
 clear all; clc; close all
 
 % Constants
@@ -15,9 +15,10 @@ t = 0.1:step:182; % time vector in seconds
 th = deg2rad(th);
 
 % Equation
+vx = vo*cos(th).*exp(-cd.*t);
 
 % Plot
-plot(t, x);
+plot(t, vx);
 hold on
 title('')
 xlabel('time (s)')

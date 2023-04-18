@@ -13,7 +13,6 @@ M1 = 343; % Value of Mach 1 (speed of sound) in m/s
 
 % Variables
 step = 0.1; % step size
-t = step:step:t_max;
 
 % Unit Conversions
 th = deg2rad(th); % convert to radians
@@ -28,19 +27,24 @@ for t = step:step:t_max
         if vy < 24 && t < t_max   % If the velocity in the y-direction is less than 24 m/s
             vy = -g/c1 + (c1*vo*sin(th) + g).*exp(-c1.*t)./c1 % Linear air drag
             y = -(g/c1).*t + (c1*vo*sin(th) + g).*(1 - exp(-c1.*t))./c1^2 % Linear air drag
+        elseif t < t_max
+            vy = -g/c2 + (c2*vo*sin(th) + g).*exp(-c2.*t)./c2 % Quadratic Air drag (Change)
+            y = -(g/c2).*t + (c2.*vo*sin(th) + g).*(1 - exp(-c2.*t))./c2^2 % Quadratic Air drag (Change)
+        else
+            return;
         end
-        vy = -g/c1 + (c1*vo*sin(th) + g).*exp(-c1.*t)./c1 % Linear air drag
-        y = -(g/c1).*t + (c1*vo*sin(th) + g).*(1 - exp(-c1.*t))./c1^2 % Linear air drag
+
     elseif vy >= M1 && t < t_max  % If the velocity in the y-direction is greater than Mach 1
         vy = -g/c1 + (c1*vo*sin(th) + g).*exp(-c1.*t)./c1 % Linear air drag
         y = -(g/c1).*t + (c1*vo*sin(th) + g).*(1 - exp(-c1.*t))./c1^2;% Linear air drag
+    else 
+        return;
     end
-end
-
-
 % Plot
-plot(t, y);
 hold on
+plot(t, y, '-o')
 title('Y-Position of Projectile as a Function of Time with Linear Air Drag')
 xlabel('Time (s)')
 ylabel('Y-Position')
+end
+

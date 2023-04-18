@@ -12,7 +12,7 @@ t_max = 250; % maximum time in seconds
 M1 = 343; % Value of Mach 1 (speed of sound) in m/s
 
 % Variables
-step = 0.1; % step size
+step = 1; % step size
 
 % Unit Conversions
 th = deg2rad(th); % convert to radians
@@ -41,6 +41,11 @@ for t = step:step:t_max
     end
 % Plot
 hold on
+plot(t, y, '-o')
+title('Y-Position of Projectile as a Function of Time with Linear Air Drag')
+xlabel('Time (s)')
+ylabel('Y-Position')
+
 plot(t, y, '-o')
 title('Y-Position of Projectile as a Function of Time with Linear Air Drag')
 xlabel('Time (s)')

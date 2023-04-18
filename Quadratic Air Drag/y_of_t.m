@@ -21,7 +21,6 @@ th = deg2rad(th); % convert to radians
 voy = vo*sin(th); % initial velocity in the y-direction
 
 vy = voy; % Init vy
-
 for t = step:step:t_max
     if vy < M1 && t < t_max % If the velocity in the y-direction is less than Mach 1
         if vy < 24  % If the velocity in the y-direction is less than 24 m/s

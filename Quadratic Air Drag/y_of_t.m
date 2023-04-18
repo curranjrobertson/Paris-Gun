@@ -21,18 +21,22 @@ th = deg2rad(th); % convert to radians
 voy = vo*sin(th); % initial velocity in the y-direction
 
 vy = voy;
-for t = step:step:t_max % time vector in seconds
+t = step;
+while t < t_max % while time is less than max time in seconds
     while vy < M1 % If the velocity in the y-direction is less than Mach 1
         while vy < 24 % If the velocity in the y-direction is less than 24 m/s
             vy = -g/c1 + (c1*vo*sin(th) + g).*exp(-c1.*t)./c1; % Linear air drag
             y = -(g/c1).*t + (c1*vo*sin(th) + g).*(1 - exp(-c1.*t))./c1^2; % Linear air drag
+            t = t + step;
         end
         vy = -g/c2 + (c2*vo*sin(th) + g).*exp(-c2.*t)./c2; % Quadratic air drag (This might be wrong)
         y = -(g/c2).*t + (c2*vo*sin(th) + g).*(1 - exp(-c2.*t))./c2^2; % Quadratic air drag (this might be wrong)
+        t = t + step;
     end
     while  vy >= M1 % If the velocity in the y-direction is greater than Mach 1
         vy = -g/c1 + (c1*vo*sin(th) + g).*exp(-c1.*t)./c1; % Linear air drag
         y = -(g/c1).*t + (c1*vo*sin(th) + g).*(1 - exp(-c1.*t))./c1^2; % Linear air drag
+        t = t + step;
     end
 end
 

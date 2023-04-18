@@ -7,10 +7,11 @@ vo = 1640; % initial velocity in m/s
 th = 55; % Launch Angle in degrees
 cd = 0.0027; % drag coefficient in 1/s
 g = 9.81; % acceleration due to gravity in m/s
+t_max = 182; % flight time in seconds
 
 % Variables
 step = 0.1; % step size
-t = 0.1:step:182; % time vector in seconds
+t = step:step:182; % time vector in seconds
 
 % Unit Conversions
 th = deg2rad(th);

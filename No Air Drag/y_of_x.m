@@ -7,10 +7,11 @@ vo = 1640; % initial velocity in m/s
 th = 55; % Launch Angle in degrees
 cd = 0.0027; % drag coefficient in 1/s
 g = 9.81; % acceleration due to gravity in m/s^2
+xmax = 130; % maximum x position in m
 
 % Variables
 step = 0.1; % step size
-x = 0.1:step:130; % time vector in seconds
+x = step:step:xmax; % time vector in seconds
 
 % Unit Conversions
 th = deg2rad(th);
@@ -25,7 +26,7 @@ y = voy*(x/vox) - (1/2)*g*(x/vox).^2;
 % Plot
 plot(x, y);
 hold on
-title('Y-Position of Projectile as a Function of X-Position with Linear Air Drag')
+title('Y-Position of Projectile as a Function of X-Position with No Air Drag')
 xlabel('X-Position (m)')
 ylabel('Y-Position (m)')
 

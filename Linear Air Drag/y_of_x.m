@@ -6,10 +6,11 @@ clear all; clc; close all
 vo = 1640; % initial velocity in m/s
 th = 55; % Launch Angle in degrees
 cd = 0.0027; % drag coefficient in 1/s
+x_max = 130; % maximum x position in m
 
 % Variables
 step = 0.1; % step size
-x = 0.1:step:130; % time vector in seconds
+x = step:step:x_max; % time vector in seconds
 
 % Unit Conversions
 th = deg2rad(th);

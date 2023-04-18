@@ -9,7 +9,7 @@ c1 = 0.0027; % drag coefficient in 1/s
 c2 = 0.001; % second order drag coefficient (unitless)
 g = 9.81; % acceleration due to gravity in m/s^s
 t_max = 182; % maximum time in seconds
-M1 = 343; % Value of Mach 1 (speed of sound) in m/s
+M1 = ; 
 
 % Variables
 step = 0.1; % step size
@@ -18,7 +18,7 @@ step = 0.1; % step size
 th = deg2rad(th); % convert to radians
 
 % Derived Constants
-voy = vo*sin(th); % initial velocity in the y-direction
+voy = vo*sin(th) % initial velocity in the y-direction
 
 vy = voy;
 for t = step:step:t_max % time vector in seconds

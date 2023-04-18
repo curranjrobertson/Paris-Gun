@@ -19,7 +19,7 @@ th = deg2rad(th);
 vy = 
 
 % Plot
-plot(x, vx);
+plot(x, vy);
 hold on
 title('Y-Velocity of Projectile as a Function of X-Position with Linear Air Drag')
 xlabel('X-Position (m)')

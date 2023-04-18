@@ -12,7 +12,7 @@ t_max = 250; % maximum time in seconds
 M1 = 343; % Value of Mach 1 (speed of sound) in m/s
 
 % Variables
-step = 1; % step size
+step = 0.1; % step size
 
 % Unit Conversions
 th = deg2rad(th); % convert to radians

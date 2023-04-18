@@ -26,4 +26,3 @@ xlabel('time (s)')
 ylabel('X-Velocity (m/s)')
 
 % Percent Error
-pe = 

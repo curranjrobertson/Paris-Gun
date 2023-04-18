@@ -1,12 +1,12 @@
 % This script plots the y-position of the projectile as a function of t
-% with linear air drag.
+% with quadratic air drag.
 clear all; clc; close all
 
 % Constants
 vo = 1640; % initial velocity in m/s
 th = 55; % Launch Angle in degrees
 c1 = 0.0027; % drag coefficient in 1/s
-c2 = ; % drag coefficient (unitless)
+c2 = 0.001; % second order drag coefficient (unitless)
 g = 9.81; % acceleration due to gravity in m/s^s
 t_max = 182; % maximum time in seconds
 
@@ -14,25 +14,25 @@ t_max = 182; % maximum time in seconds
 step = 0.1; % step size
 
 % Unit Conversions
-th = deg2rad(th);
+th = deg2rad(th); % convert to radians
 
+% Derived Constants
+voy = vo*sin(th); % initial velocity in the y-direction
+
+vy = voy % Init y velocity
 for t = step:step:t_max; % time vector in seconds
-    vy = ; % Equation for velocity in y direction
-    if vy < M1 % If the velocity in the y-direction is less than Mach 1
-        if vy < 24 % If the velocity in the y-direction is less than 24 m/s
+    while vy < M1 % If the velocity in the y-direction is less than Mach 1
+        while vy < 24 % If the velocity in the y-direction is less than 24 m/s
+            vy = -g/c1 + (c1*vo*sin(th) + g).*exp(-c1.*t)./c1; % Linear air drag
             y = -(g/c1).*t + (c1*vo*sin(th) + g).*(1 - exp(-c1.*t))./c1^2; % Linear air drag
-        else 
-            y = ;% Quadratic air drag
         end
-    elseif  vy >= M1 % If the velocity in the y-direction is greater than Mach 1
+        vy = -g/c2 + (c2*vo*sin(th) + g).*exp(-c2.*t)./c2; % Quadratic air drag (This might be wrong)
+        y = y = -(g/c2).*t + (c2*vo*sin(th) + g).*(1 - exp(-c2.*t))./c2^2; % Quadratic air drag (this might be wrong)
+
+    while  vy >= M1 % If the velocity in the y-direction is greater than Mach 1
         y = -(g/c1).*t + (c1*vo*sin(th) + g).*(1 - exp(-c1.*t))./c1^2; % Linear air drag
-    else 
-        return;
     end
 end
-
-% Equation 7 y(t)
-y = -(g/cd).*t + (cd*vo*sin(th) + g).*(1 - exp(-cd.*t))./cd^2;
 
 % Plot
 plot(t, y);

@@ -1,4 +1,4 @@
-% This script plots the velocity in the x-direction of the projectile as a
+% This script plots the Y-Position of the projectile as a
 % function of x with no air drag.
 clear all; clc; close all
 
@@ -14,17 +14,14 @@ x = 0.1:step:130; % time vector in seconds
 % Unit Conversions
 th = deg2rad(th);
 
-% Derived Constants
-vox = vo*cos(th); % initial x-velocity in m/s
-
 % Equation 
-vx = vox
+y = 
 
 % Plot
-plot(x, vx);
+plot(x, y);
 hold on
-title('X-Velocity of Projectile as a Function of X-Position with Linear Air Drag')
+title('Y-Position of Projectile as a Function of X-Position with Linear Air Drag')
 xlabel('X-Position (m)')
-ylabel('X-Velocity (m/s)')
+ylabel('Y-Position (m)')
 
 % Percent Error

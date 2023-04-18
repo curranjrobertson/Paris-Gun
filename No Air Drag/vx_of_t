@@ -22,7 +22,7 @@ vo_x = vo*cos(th); % initial velocity in x direction
 vx = vo_x; % velocity in x direction
 
 % Plot
-plot(t, x);
+plot(t, vx);
 hold on
 title('Velocity in the X-Direction of Projectile as a Function of Time With No Air Drag')
 xlabel('time (s)')

@@ -19,13 +19,13 @@ th = deg2rad(th);
 % Derived Constants
 voy = vo*sin(th); % initial velocity in the y-direction
 
-% Equation V_x Motion of a Projectile Hibbeler Dynamics
+% Equation V_y Motion of a Projectile Hibbeler Dynamics
 vy = voy-g.*t;
 
 % Plot
-plot(t, x);
+plot(t, vy);
 hold on
-title('Velocity in the X-Direction of Projectile as a Function of Time With No Air Drag')
+title('Velocity in the Y-Direction of Projectile as a Function of Time With No Air Drag')
 xlabel('time (s)')
 ylabel('X position (m)')
 

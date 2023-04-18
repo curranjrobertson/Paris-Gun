@@ -1,6 +1,5 @@
-% This script plots the x-position of the projectile as a function of t
+% This script plots the velocity in the x-direction of the projectile as a function of t
 % with linear air drag.
-
 clear all; clc; close all
 
 % Constants
@@ -16,12 +15,15 @@ t = step:step:t_max; % time vector in seconds
 % Unit Conversions
 th = deg2rad(th);
 
-% Equation 4 x(t)
-x = (vo.*cos(th)./cd).*(1-exp(-cd.*t));
+% Equation 5 vx(t)
+vx = vo*cos(th).*exp(-cd.*t);
 
 % Plot
-plot(t, x);
+plot(t, vx);
 hold on
-title('X-Position of Projectile as a Function of Time With Linear Air Drag')
+title('X-Velocity of Projectile as a Function of Time with Linear Air Drag')
 xlabel('time (s)')
-ylabel('X position (m)')
+ylabel('X-Velocity (m/s)')
+
+% Percent Error
+pe = 

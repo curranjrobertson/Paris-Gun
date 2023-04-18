@@ -21,5 +21,5 @@ vx =
 plot(x, vx);
 hold on
 title('X-Velocity of Projectile as a Function of X-Position with Linear Air Drag')
-xlabel('X-Postion (m)')
+xlabel('X-Position (m)')
 ylabel('X-Velocity (m/s)')

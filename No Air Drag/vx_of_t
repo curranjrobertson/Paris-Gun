@@ -1,4 +1,4 @@
-% This script plots the x-position of the projectile as a function of t
+% This script plots the velocity in the x-direction of the projectile as a function of t
 % with no air drag.
 
 clear all; clc; close all
@@ -18,13 +18,13 @@ th = deg2rad(th);
 % Derived Constants
 vo_x = vo*cos(th); % initial velocity in x direction
 
-% Equation x(t) Motion of a Projectile Hibbeler Dynamics
-x = vo_x.*t
+% Equation V_x Motion of a Projectile Hibbeler Dynamics
+vx = vo_x; % velocity in x direction
 
 % Plot
 plot(t, x);
 hold on
-title('X-Position of Projectile as a Function of Time With No Air Drag')
+title('Velocity in the X-Direction of Projectile as a Function of Time With No Air Drag')
 xlabel('time (s)')
 ylabel('X position (m)')
 

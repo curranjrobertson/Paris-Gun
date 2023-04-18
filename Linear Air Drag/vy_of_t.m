@@ -6,7 +6,7 @@ clear all; clc; close all
 vo = 1640; % initial velocity in m/s
 th = 55; % Launch Angle in degrees
 cd = 0.0027; % drag coefficient in 1/s
-g = 9.81; % acceleration due to gravity in m/s
+g = 9.81; % acceleration due to gravity in m/s^2
 
 % Variables
 step = 0.1; % step size

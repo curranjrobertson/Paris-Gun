@@ -1,4 +1,4 @@
-% This script plots the x-position of the projectile as a function of t
+% This script plots the velocity in the y-direction of the projectile as a function of t
 % with no air drag.
 
 clear all; clc; close all
@@ -7,6 +7,7 @@ clear all; clc; close all
 vo = 1640; % initial velocity in m/s
 th = 55; % Launch Angle in degrees
 cd = 0.0027; % drag coefficient in 1/s
+g = 9.81; % acceleration due to gravity in m/s^2
 
 % Variables
 step = 0.1; % step size
@@ -16,15 +17,15 @@ t = 0.1:step:182; % time vector in seconds
 th = deg2rad(th);
 
 % Derived Constants
-vo_x = vo*cos(th); % initial velocity in x direction
+voy = vo*sin(th); % initial velocity in the y-direction
 
-% Equation x(t) Motion of a Projectile Hibbeler Dynamics
-x = vo_x.*t
+% Equation V_x Motion of a Projectile Hibbeler Dynamics
+vy = voy-g.*t;
 
 % Plot
 plot(t, x);
 hold on
-title('X-Position of Projectile as a Function of Time With No Air Drag')
+title('Velocity in the X-Direction of Projectile as a Function of Time With No Air Drag')
 xlabel('time (s)')
 ylabel('X position (m)')
 

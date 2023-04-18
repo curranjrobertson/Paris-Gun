@@ -15,8 +15,8 @@ x = step:step:x_max; % time vector in seconds
 % Unit Conversions
 th = deg2rad(th);
 
-% Equation 
-vx = 
+% Equation 4 and 5
+vx = vo*cos(th) - c1.*x;
 
 % Plot
 plot(x, vx);

@@ -1,0 +1,40 @@
+% This script plots the velocity in the y-direction of the projectile as a
+% function of x with linear air drag.
+clear all; clc; close all
+
+% Constants
+vo = 1640; % initial velocity in m/s
+th = 55; % Launch Angle in degrees
+c1 = 0.0027; % drag coefficient in 1/s
+x_max = 130; % maximum x-position in m
+g = 9.81; % acceleration due to gravity in m/s^2
+t_max = 182; % max time
+
+% Variables
+step = 0.1; % step size
+x = step:step:x_max; % time vector in seconds
+
+% Unit Conversions
+th = deg2rad(th);
+
+syms t y
+% Equation 7 y(t)
+y = -(g/c1)*t + (c1*vo*sin(th) + g)*(1 - exp(-c1*t))/c1^2 == y;
+
+% Equation 6 vy(t)
+vy = -g/c1 + (c1*vo*sin(th) + g).*exp(-c1.*t)./c1;
+
+t = solve(y, t)
+subs(vy, t, ans
+
+t = step:step:t_max;
+
+% Equation 
+vy = -g/c1 + (c1*vo*sin(th) + g).*exp(-c1.*t)./c1;
+
+% Plot
+% plot(y, vy);
+% hold on
+% title('Y-Velocity of Projectile as a Function of X-Position with Linear Air Drag')
+% xlabel('X-Position (m)')
+% ylabel('Y-Velocity (m/s)')

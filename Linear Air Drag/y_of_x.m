@@ -16,7 +16,7 @@ x = step:step:x_max; % time vector in seconds
 th = deg2rad(th);
 
 % Equation 
-y = vo*cos(th) - cd.*x
+y = 
 
 % Plot
 plot(x, y);

@@ -5,7 +5,8 @@ clear all; clc; close all
 % Constants
 vo = 1640; % initial velocity in m/s
 th = 55; % Launch Angle in degrees
-cd = 0.0027; % drag coefficient in 1/s
+c1 = 0.0027; % drag coefficient in 1/s
+c2 = ; % drag coefficient (unitless)
 g = 9.81; % acceleration due to gravity in m/s^s
 t_max = 182; % maximum time in seconds
 
@@ -19,12 +20,12 @@ for t = step:step:t_max; % time vector in seconds
     vy = ; % Equation for velocity in y direction
     if vy < M1 % If the velocity in the y-direction is less than Mach 1
         if vy < 24 % If the velocity in the y-direction is less than 24 m/s
-            y = -(g/cd).*t + (cd*vo*sin(th) + g).*(1 - exp(-cd.*t))./cd^2; % Linear air drag
+            y = -(g/c1).*t + (c1*vo*sin(th) + g).*(1 - exp(-c1.*t))./c1^2; % Linear air drag
         else 
             y = ;% Quadratic air drag
         end
     elseif  vy >= M1 % If the velocity in the y-direction is greater than Mach 1
-        y = -(g/cd).*t + (cd*vo*sin(th) + g).*(1 - exp(-cd.*t))./cd^2; % Linear air drag
+        y = -(g/c1).*t + (c1*vo*sin(th) + g).*(1 - exp(-c1.*t))./c1^2; % Linear air drag
     else 
         return;
     end

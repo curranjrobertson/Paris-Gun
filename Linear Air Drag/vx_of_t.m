@@ -5,7 +5,7 @@ clear all; clc; close all
 % Constants
 vo = 1640; % initial velocity in m/s
 th = 55; % Launch Angle in degrees
-cd = 0.0027; % drag coefficient in 1/s
+c1 = 0.0027; % drag coefficient in 1/s
 t_max = 182; % max time in seconds
 
 % Variables
@@ -16,7 +16,7 @@ t = step:step:t_max; % time vector in seconds
 th = deg2rad(th);
 
 % Equation 5 vx(t)
-vx = vo*cos(th).*exp(-cd.*t);
+vx = vo*cos(th).*exp(-c1.*t);
 
 % Plot
 plot(t, vx);

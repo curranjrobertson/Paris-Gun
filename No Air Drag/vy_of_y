@@ -5,7 +5,7 @@ clear all; clc; close all
 % Constants
 vo = 1640; % initial velocity in m/s
 th = 55; % Launch Angle in degrees
-cd = 0.0027; % drag coefficient in 1/s
+c1 = 0.0027; % drag coefficient in 1/s
 g = 9.81; % acceleration due to gravity in m/s^2
 x_max = 130; % maximum x-position in m
 

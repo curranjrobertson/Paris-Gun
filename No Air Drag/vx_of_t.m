@@ -28,5 +28,3 @@ hold on
 title('Velocity in the X-Direction of Projectile as a Function of Time With No Air Drag')
 xlabel('time (s)')
 ylabel('X position (m)')
-
-% Percent Error

@@ -41,7 +41,7 @@ for t = step:step:t_max
 % Plot
 hold on
 plot(t, y, '-o')
-title('Y-Position of Projectile as a Function of Time with Linear Air Drag')
+title('Y-Position of Projectile as a Function of Time with Compound Air Drag')
 xlabel('Time (s)')
 ylabel('Y-Position')
 end

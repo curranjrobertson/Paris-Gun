@@ -1,5 +1,19 @@
 % This script plots the y-position of the projectile as a function of t
 % with no air drag.
+%{
+Velocity in the x Direction as a function of time without air drag
+
+Authors: Curran J. Robertson, Kyden F. DeGross 
+Professor: Dr. Daniel Rederth
+
+Last Modified: 04/24/2023
+Description: Script calculates and plots the velocity in the y-direction of the Paris 
+Gun projectile as function of time without air drag
+CONSTANTS: The real ambient temperature in degrees Celcius (RealTemp) as a
+real number between the range of -86<=RealTemp<=-41.
+OUTPUTS: 
+  Figure 1: Velocity of the projectile in the x-direction as a function of time without air drag
+%}
 clear all; clc; close all
 
 % Constants

@@ -1,5 +1,16 @@
-% This script plots the velocity in the y-direction of the projectile as a
-% function of x with no air drag.
+%{
+Velocity in the y-direction as a function of the x-position without air drag
+
+Authors: Curran J. Robertson, Kyden F. DeGross 
+Professor: Dr. Daniel Rederth
+
+Last Modified: 04/24/2023
+Description: Script calculates and plots the velocity in the y-direction of the Paris 
+Gun projectile as function of the y-position without air drag
+
+OUTPUTS: 
+  Figure 1: Velocity of the projectile in the x-direction as a function of time without air drag
+%}
 clear all; clc; close all
 
 % Constants

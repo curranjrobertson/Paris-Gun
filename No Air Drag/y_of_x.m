@@ -1,5 +1,3 @@
-% This script plots the Y-Position of the projectile as a
-% function of x with no air drag.
 %{
 
 Y-position of the projectile as a function of the x-position

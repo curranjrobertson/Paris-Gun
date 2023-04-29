@@ -1,0 +1,10 @@
+clear all; clc; close all
+
+% Constants (Given)
+vy_5 = 1; % Replace with vy(t5) in seconds
+y_5 = 1; % Replace with y(t5) in seconds
+t5 = 1; % Replace with t5 in seconds
+tf = 182; % final time in seconds
+
+% Constants
+k1 = 

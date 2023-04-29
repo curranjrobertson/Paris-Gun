@@ -20,8 +20,7 @@ k1 = M1 + g/c1 - (c1*vo*sin(th) + g)*exp(-c1*t5)/c1; %
 k2 = y_5 + (g/c1)*t5 - (c1*vo*sin(th) + g)*(1-exp(-c1*t5))/c1^2
 
 % Equations
-vx = @(t) vo*cos(th).*exp(-c1.*t);
-
+vx = @(t) 
 vy = @(t) -g/c1 + (c1*vo*sin(th) + g)*exp(-c1*t5)/c1 + k1
 y = @(t) -(g/c1)*t + (c1*vo*sin(th) + g)*(1-exp(-c1*t))/c1^2 + k2
 
@@ -32,8 +31,8 @@ th_tf = atan(vy(tf)/vx(tf))
 vf = sqrt(vx(tf)^2 + vy(tf)^2)
 
 % Position 5
-x_t5 = vo*cos(th)*(1-exp(-c1*t5))/c1 % x position at t5
+x(tf) = vo*cos(th)*(1-exp(-c1*t5))/c1
 
-V_t5 = sqrt(vx(t5)^2 + vy(t5)^2) % velocity magnitude at t5
+V(t5) = sqrt(vx(t5)^2 + vy(t5)^2)
 
-th_t5 = atan(vy(t5)/vx(t5)) % angle wrt to horizontal at t5
+th(t5) = atan(vy(t5)/vx(t5))

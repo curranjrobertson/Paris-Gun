@@ -23,8 +23,8 @@ y1 = y(1:385)
 
 t2 = t(1229:1.25*1820) 
 y2 = y(1229:1.25*1820) - 28000
-%%
-% Numerical Solution for 24 < vy < Mach 1 going up
+
+% Numerical Solution for 24 < vy < Mach 1
 % This solution solves Conner's original second order, nonlinear ode using
 % ode45. The solution must be multiplied by a factor after calling ode45
 % because there are singularities in the function using the correct tspan

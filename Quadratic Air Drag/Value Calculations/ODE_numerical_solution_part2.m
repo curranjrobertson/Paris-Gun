@@ -1,4 +1,8 @@
-% Attempt to solve 24 m/s < Vy < Mach 1 
+% Numerical Solution for 24 < vy < Mach 1 going down
+% This solution solves Conner's original second order, nonlinear ode using
+% ode45. The solution must be multiplied by a factor after calling ode45
+% because there are singularities in the function using the correct tspan
+% and yspan. 
 
 clear all;clc;close all
 
@@ -6,17 +10,18 @@ clear all;clc;close all
 c2 = 0.0027; % drag coefficient (change)
 g = 9.81; % acceleration due to gravity in m/s^2
 
-tspan = [93.5 242]; % timespan in seconds
-yspan = [42270 2.8557e+04]; % y span
-
-% Tolerance change
-options = odeset('RelTol',10,'AbsTol',10);
+tspan = [-5 8]; % timespan in seconds
+yspan = [0 100]; % y span
 
 syms y(t)
 [V] = odeToVectorField(-diff(y,2) == c2*diff(y)^2 + g); % Convert ode to vector field
 
 M = matlabFunction(V, 'vars', {'t','Y'}); % convert to function
 
-ode45(M,tspan,yspan,options) % solve ode
+[t,y] = ode45(M,tspan,yspan) % solve ode
 
-%fplot(@(x)deval(sol,x,1), tspan) % Plot
+%
+f1 = 42300/244.7965 % Factor to make y(t) line up with correct solution
+y = f1*y %multiply y by factor
+
+plot(t,y(:,1)) % plot y

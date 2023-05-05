@@ -6,8 +6,8 @@ clear all;clc;close all
 c2 = 0.0027; % drag coefficient (change)
 g = 9.81; % acceleration due to gravity in m/s^2
 
-tspan = [38.9 88.5]; % timespan in seconds
-yspan = [3.5521e+04 42269]; % y span
+tspan = [93.5 242]; % timespan in seconds
+yspan = [42270 2.8557e+04]; % y span
 
 % Tolerance change
 options = odeset('RelTol',1e-4,'AbsTol',1e-8);
@@ -20,4 +20,3 @@ M = matlabFunction(V, 'vars', {'t','Y'}); % convert to function
 sol = ode45(M,tspan,yspan) % solve ode
 
 fplot(@(x)deval(sol,x,1), tspan) % Plot
-

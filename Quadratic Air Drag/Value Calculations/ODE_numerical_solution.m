@@ -36,5 +36,10 @@ plot(t,y(:,1)) % plot y(t)
 figure
 t_up = find(t > 38.9 & t < 88.5) % find the values in the vector where t is between the end points
 plot(t(45:52),y(45:52,1)) % Plot y(t) section
+hold on
+xlabel('time (s)')
+ylabel('height (m)')
+title('Y-Position vs. Time for quadratic drag (Needs Some adjusting)')
+
 
 

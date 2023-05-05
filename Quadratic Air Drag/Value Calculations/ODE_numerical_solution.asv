@@ -26,6 +26,10 @@ f1 = 42300/244.7965; % Factor to make y(t) line up with correct solution (change
 f3 = 4.2269/4.78;
 y = f1*y + 5650; % reevaluate y
 
+% vector
+grad = linspace(0,5.5155e03)
+y = y + 
+
 % t vector adjustment
 f2 = 182/12.25; % Factor to make t-vector correct timespan (change)
 t = f2*(t + 5); % reevaluate t
@@ -37,18 +41,7 @@ plot(t,y(:,1)) % plot y(t)
 figure
 t_up = find(t > 38.9 & t < 88.5) % find the values in the vector where t is between the end points
 
-% New t vector
-tup = t(43:52)
-yup = y(43:52,1)
-
-% grad vector addition
-% vector
-length(tup); %find the length of the t vector
-
-grad = linspace(0, 5.5155e03, length(tup))'
-ynew = yup - grad
-
-plot(tup,ynew(:,1)) % Plot y(t) section (change)
+plot(t(43:52),y(43:52,1)) % Plot y(t) section (change)
 hold on
 xlabel('time (s)')
 ylabel('height (m)')

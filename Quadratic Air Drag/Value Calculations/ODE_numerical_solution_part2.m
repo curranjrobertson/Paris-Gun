@@ -31,3 +31,9 @@ t = f2*(t + 5);
 
 % Plot
 plot(t,y(:,1)) % plot y
+
+% Partial Plot
+figure
+t_down = find(t > 93.5 & t < 143.1) % find the values in the vector where t is between the end points (Change t < 143.1 -> based on uniform acceleration on both sides)
+plot(t(54:63),y(54:63,1)) % Plot y(t) section
+

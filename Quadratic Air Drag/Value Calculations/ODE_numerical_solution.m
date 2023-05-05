@@ -22,14 +22,19 @@ M = matlabFunction(V, 'vars', {'t','Y'}) % convert to function
 [t,y] = ode45(M,tspan,yspan) % solve ode
 
 % y vector adjustment
-f1 = 42300/244.7965; % Factor to make y(t) line up with correct solution
-y = f1*y; %multiply y by factor
+f1 = 42300/244.7965; % Factor to make y(t) line up with correct solution (change)
+y = f1*y; % reevaluate y
 
 % t vector adjustment
-f2 = 182/12.25;
-t = f2*(t + 5);
+f2 = 182/12.25; % Factor to make t-vector correct timespan
+t = f2*(t + 5); % reevaluate t
 
-% Plot
-plot(t,y(:,1)) % plot y
+% Full Plot
+plot(t,y(:,1)) % plot y(t)
+
+% Partial Plot
+figure
+t_up = find(t > 38.9 & t < 88.5) % find the values in the vector where t is between the end points
+plot(t(45:52),y(45:52,1)) % Plot y(t) section
 
 

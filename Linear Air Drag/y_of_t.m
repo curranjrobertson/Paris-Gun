@@ -11,16 +11,17 @@ t_max = 182; % maximum time in seconds
 
 % Variables
 step = 0.1; % step size
-t = step:step:t_max; % time vector in seconds
+t = step:step:t_max % time vector in seconds
 
 % Unit Conversions
 th = deg2rad(th);
 
 % Equation 7 y(t)
-y = -(g/c1).*t + (c1*vo*sin(th) + g).*(1 - exp(-c1.*t))./c1^2;
+y = -(g/c1).*t + (c1*vo*sin(th) + g).*(1 - exp(-c1.*t))./c1^2
 
 % Plot
 plot(t, y);
+
 hold on
 title('Y-Position of Projectile as a Function of Time with Linear Air Drag')
 xlabel('Time (s)')

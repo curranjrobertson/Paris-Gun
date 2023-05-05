@@ -22,11 +22,11 @@ M = matlabFunction(V, 'vars', {'t','Y'}); % convert to function
 [t,y] = ode45(M,tspan,yspan) % solve ode
 
 % y vector adjustment
-f1 = 42300/244.7965; % Factor to make y(t) line up with correct solution
+f1 = 42300/244.7965; % Factor to make y(t) line up with correct solution (change)
 y = f1*y; % multiply y by factor
 
 % t vector adjustment
-f2 = 182/12.25; % Factor to make t vector go from 0 to 182
+f2 = 182/12.25; % Factor to make t vector go from 0 to 182 (change)
 t = f2*(t + 5);
 
 % Plot
@@ -35,7 +35,7 @@ plot(t,y(:,1)) % plot y
 % Partial Plot
 figure
 t_down = find(t > 93.5 & t < 143.1) % find the values in the vector where t is between the end points (Change t < 143.1 -> based on uniform acceleration on both sides)
-plot(t(54:63),y(54:63,1)) % Plot y(t) section
+plot(t(54:63),y(54:63,1)) % Plot y(t) section (change)
 hold on
 xlabel('time (s)')
 ylabel('height (m)')

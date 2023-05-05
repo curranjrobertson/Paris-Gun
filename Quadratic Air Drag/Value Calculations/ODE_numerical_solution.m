@@ -26,7 +26,7 @@ f1 = 42300/244.7965; % Factor to make y(t) line up with correct solution (change
 y = f1*y; % reevaluate y
 
 % t vector adjustment
-f2 = 182/12.25; % Factor to make t-vector correct timespan
+f2 = 182/12.25; % Factor to make t-vector correct timespan (change)
 t = f2*(t + 5); % reevaluate t
 
 % Full Plot
@@ -35,7 +35,7 @@ plot(t,y(:,1)) % plot y(t)
 % Partial Plot
 figure
 t_up = find(t > 38.9 & t < 88.5) % find the values in the vector where t is between the end points
-plot(t(45:52),y(45:52,1)) % Plot y(t) section
+plot(t(45:52),y(45:52,1)) % Plot y(t) section (change)
 hold on
 xlabel('time (s)')
 ylabel('height (m)')

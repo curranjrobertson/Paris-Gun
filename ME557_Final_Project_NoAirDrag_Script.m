@@ -95,6 +95,26 @@ yvelocityvectorairdrag(885:910) = 24-g*timevector(1:26);
 
 ypositionvectorairdrag(910:935)= 4.23e+04 + 0.5*(-24)*timevector(1:26);
 yvelocityvectorairdrag(910:935) = 0+g*timevector(1:26);
+%% Stage 5
+%% Stage 6
+
+%M1<Vy<M2
+cd1c = 0.08;
+theta1c = 38.5;
+ypositionvectorairdrag(321:389) = (((2*343*sind(theta1c)*cd1c)+g)/cd1c^2)*(1-exp(-cd1c*timevector(1:69)))-(g*timevector(1:69)/cd1c)+ypositionvectorairdrag(319);
+yvelocityvectorairdrag(321:389) = (-g/cd1c)+((cd1c*2*343*sind(theta1c)+g)/cd1c)*exp(-cd1c*timevector(1:69))+329.1;
+
+
+%M2<Vy<M3
+cd1b = 0.04;
+theta1b = 49.4;
+ypositionvectorairdrag(242:320) = (((343*3*sind(theta1b)*cd1b)+g)/cd1b^2)*(1-exp(-cd1b*timevector(1:79)))-(g*timevector(1:79)/cd1b)+ypositionvectorairdrag(242);
+yvelocityvectorairdrag(242:320) = (-g/cd1b)+((cd1b*343*3*sind(theta1b)+g)/cd1b)*exp(-cd1b*timevector(1:79))+250;
+
+%Vy>M3
+ypositionvectorairdrag(1:242) = (((v0*sind(theta)*cd1a)+g)/cd1a^2)*(1-exp(-cd1a*timevector(1:242)))-(g*timevector(1:242)/cd1a);
+yvelocityvectorairdrag(1:242) = (-g/cd1a)+((cd1a*v0*sind(theta)+g)/cd1a)*exp(-cd1a*timevector(1:242));
+
 %% Plots for projectile motion with both no airdrag(blue) and airdrag(orange)
 
 % X-position vs Time

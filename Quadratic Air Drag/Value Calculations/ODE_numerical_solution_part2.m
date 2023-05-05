@@ -13,6 +13,7 @@ g = 9.81; % acceleration due to gravity in m/s^2
 tspan = [-5 8]; % timespan in seconds
 yspan = [0 100]; % y span
 
+% Solution
 syms y(t)
 [V] = odeToVectorField(-diff(y,2) == c2*diff(y)^2 + g); % Convert ode to vector field
 
@@ -22,10 +23,11 @@ M = matlabFunction(V, 'vars', {'t','Y'}); % convert to function
 
 % y vector adjustment
 f1 = 42300/244.7965; % Factor to make y(t) line up with correct solution
-y = f1*y; %multiply y by factor
+y = f1*y; % multiply y by factor
 
 % t vector adjustment
-f2 = 182/12.25;
+f2 = 182/12.25; % Factor to make t vector go from 0 to 182
 t = f2*(t + 5);
 
+% Plot
 plot(t,y(:,1)) % plot y

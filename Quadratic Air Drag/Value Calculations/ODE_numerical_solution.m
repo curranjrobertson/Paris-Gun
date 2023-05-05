@@ -13,6 +13,7 @@ g = 9.81; % acceleration due to gravity in m/s^2
 tspan = [-5 8]; % timespan in seconds
 yspan = [0 100]; % y span
 
+% Solution
 syms y(t)
 [V] = odeToVectorField(-diff(y,2) == c2*diff(y)^2 + g) % Convert ode to vector field
 
@@ -28,6 +29,7 @@ y = f1*y; %multiply y by factor
 f2 = 182/12.25;
 t = f2*(t + 5);
 
+% Plot
 plot(t,y(:,1)) % plot y
 
 

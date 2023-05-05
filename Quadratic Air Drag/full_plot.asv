@@ -22,7 +22,7 @@ t1 = t(1:385)
 y1 = y(1:385)
 
 t2 = t(1229:1.25*1820) 
-y2 = y(1229:1.25*1820) - 28000
+y2 = y(1229:1.25*1820) - 30000
 %%
 % Numerical Solution for 24 < vy < Mach 1 going up
 % This solution solves Conner's original second order, nonlinear ode using
@@ -68,11 +68,11 @@ ylabel('Y-Position')
 
 % New t vector
 tup = t(43:52)
-yup = y(43:52,1) + 6000
+yup = y(43:52,1)
 
 plot(tup,yup(:,1)) % Plot y(t) section (change)
 
-plot(t(54:63),y(54:63,1)+6000) % Plot y(t) section (change)
+plot(t(54:63),y(54:63,1)) % Plot y(t) section (change)
 
 plot(t2,y2)
 

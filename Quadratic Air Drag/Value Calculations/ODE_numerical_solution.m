@@ -41,14 +41,14 @@ t_up = find(t > 38.9 & t < 88.5) % find the values in the vector where t is betw
 tup = t(43:52)
 yup = y(43:52,1)
 
-% grad vector addition
-% vector
-length(tup); %find the length of the t vector
+% % grad vector addition
+% % vector
+% length(tup); %find the length of the t vector
+% 
+% grad = linspace(0, 5.5155e03, length(tup))'
+% ynew = yup - grad
 
-grad = linspace(0, 5.5155e03, length(tup))'
-ynew = yup - grad
-
-plot(tup,ynew(:,1)) % Plot y(t) section (change)
+plot(tup,yup(:,1)) % Plot y(t) section (change)
 hold on
 xlabel('time (s)')
 ylabel('height (m)')

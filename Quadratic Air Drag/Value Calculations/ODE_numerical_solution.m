@@ -20,9 +20,13 @@ M = matlabFunction(V, 'vars', {'t','Y'}) % convert to function
 
 [t,y] = ode45(M,tspan,yspan) % solve ode
 
-%
-f1 = 42300/244.7965 % Factor to make y(t) line up with correct solution
-y = f1*y %multiply y by factor
+% y vector adjustment
+f1 = 42300/244.7965; % Factor to make y(t) line up with correct solution
+y = f1*y; %multiply y by factor
+
+% t vector adjustment
+f2 = 182/12.25;
+t = f2*(t + 5);
 
 plot(t,y(:,1)) % plot y
 

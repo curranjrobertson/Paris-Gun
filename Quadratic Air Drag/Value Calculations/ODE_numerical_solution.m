@@ -6,18 +6,19 @@ clear all;clc;close all
 c2 = 0.0027; % drag coefficient (change)
 g = 9.81; % acceleration due to gravity in m/s^2
 
-tspan = [38.9 88.5]; % timespan in seconds
-yspan = [3.5521e+04 42269]; % y span
+tspan = [-5 8]; % timespan in seconds
+yspan = [0 100]; % y span
 
 % Tolerance change
-options = odeset('RelTol',1e-4,'AbsTol',1e-8);
+%options = odeset('RelTol',0.1,'AbsTol',0.1);
 
 syms y(t)
-[V] = odeToVectorField(-diff(y,2) == c2*diff(y)^2 + g); % Convert ode to vector field
+[V] = odeToVectorField(-diff(y,2) == c2*diff(y)^2 + g) % Convert ode to vector field
 
-M = matlabFunction(V, 'vars', {'t','Y'}); % convert to function
+M = matlabFunction(V, 'vars', {'t','Y'}) % convert to function
 
-sol = ode45(M,tspan,yspan) % solve ode
-
-fplot(@(x)deval(sol,x,1), tspan) % Plot
+[t,y] = ode45(M,tspan,yspan) % solve ode
+y
+plot(t,y)
+%fplot(@(x)deval(sol,x,1), tspan) % Plot
 
